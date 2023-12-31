@@ -7,12 +7,12 @@
 # ---------------------------------------------------------
 
 resource "aws_s3_bucket" "unifi" {
-    bucket = lower("<your resource prefix here>-${var.env_name}${var.deployment_region_friendly}UniFi")
+    bucket = lower("<your resource prefix here>${var.env_name}${var.deployment_region_friendly}UniFi")
 
     tags = merge(
         var.tags,
         {
-            Name = lower("<your resource prefix here>-${var.env_name}${var.deployment_region_friendly}UniFi")
+            Name = lower("<your resource prefix here>${var.env_name}${var.deployment_region_friendly}UniFi")
         },
     )
 }
